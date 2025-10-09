@@ -1,29 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- head
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-        Purpose:
-        - Title used here shows up in the browser tab
-        - Link to the favicon (small image that appears in the browser tab)
-        - Link to the CSS file (used to style the webpage)
+<div class="header">
+  <div id="header-left">
+    <img id="header-img" src="img/purpose image.png" alt="ReadySetCollege Logo" style="width: 250px;px; max-width:100%;">
+  </div>
 
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) (favicon)
-        - [ ] Any time after
-        -->
+  <div id="header-right">
+    <h1>ReadySetCollege</h1>
+    <h2>Your Future Starts Here</h2>
+    <div class="header-button">
+      <button>Sign Up</button>
+      <button>Help</button>
+    </div>
+  </div>
+</div>
+<!-- 
+  - Title used here shows up in the browser tab
+  - Link to the favicon (small image that appears in the browser tab)
+  - Link to the CSS file (used to style the webpage)
+
+  When To Modify:
+  - [ ] Project 2 (REQUIRED FEATURE) 
+  - [ ] Project 2 (STRETCH FEATURE) (favicon)
+  - [ ] Any time after
+-->
         <title>ReadySetCollege</title>
         <style>
            body {
-        background-color: rgb(232, 220, 144);font-family: "Lucida Handwriting", cursive;/* You can change this to any color */
+         background-color: #051634;
+      color: #FFD700; /* gold text */
+      font-family: "Lucida Handwriting", cursive;
+      margin: 40px;
+      text-align: center ;
     }
+
+
         </style>
     </head>
     
     <body>
     
-        <!-- navbar [PLACEHOLDER] [ADDED IN UNIT 4] -->
+      <!-- navbar
+
+Purpose:
+- Navigation bar that allows users to jump to different sections of the webpage
+- Also holds buttons for user settings (dark mode, reduce motion)
+
+When To Modify:
+- [ ] Project 4 (REQUIRED FEATURE)
+- [ ] Project 5 (REQUIRED FEATURE) 
+- [ ] Project 8 (STRETCH FEATURE) 
+- [ ] Any time between / after
+-->
+<div class="navbar">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#mentors">Mentorship</a></li>
+  </ul>
+</div>
+
+<section id="about">
+  <h2>About the Event</h2>
+  <p>Promote educational equity by giving students (especially first-gen, low-income, or underrepresented groups) the tools they need to succeed.</p>
+</section>
+
+<section id="schedule">
+  <h2>Ready, Set, Succeed</h2>
+  <p>Explore workshops, panels, and networking opportunities designed to empower your academic journey.</p>
+</section>
+
+<section id="resources">
+  <h2>Student Resources</h2>
+  <p>Access curated guides, campus links, and support tools tailored for first-gen and underrepresented students.</p>
+</section>
+
+<section id="mentors">
+  <h2>Mentorship</h2>
+  <div>
+    <button>Become a Mentor</button>
+    <button>Find a Mentor</button>
+  </div>
+</section>
+
 
         <!-- headings
 
@@ -36,15 +100,9 @@
         - [ ] Project 3 (REQUIRED FEATURE) 
         - [ ] Project 4 (REQUIRED FEATURE) 
         - [ ] Any time after
-        -->
-        <img id="header-img" src="./img/logo500.png"/>
-        <h1>ReadySetCollege</h1>
-        <h2>Subtitle</h2>
-        <button type="button">Sign Up</button>
-        <button type="button">Help</button>
+        --
 
-        
-        <!-- about
+     about
 
         Purpose:
         - Section for general info about the event
@@ -56,16 +114,18 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <h2>About the Event</h2>
-        <p>promote educational equity by giving students (especially first-gen, low-income, or underrepresented groups) the tools they need to succeed</p>
+        
 
         <h3>What to Expect</h3>
-        <h4>Tag Line</h4>
-        <ul>
-            <li> <b>Bullet 1:</b> <i>Description</i></li>
-            <li> <b>Bullet 2:</b> <i>Description</i></li>
-            <li> <b>Bullet 3:</b> <i>Description</i></li>
-        </ul>
+        <h4>The Gateway to Academic Success.</h4>
+        
+       <div style="text-align: left;">
+  <ul>
+    <li><span style="color:rgb(6, 102, 57); font-weight:bold;">College planning tools</span>: provides students with a detailed step-by-step plan to transition from high school to college.</li>
+    <li><span style="color:rgb(6, 102, 57); font-weight:bold;">Mentorship opportunities</span>: brings together students who are currently in college with professionals who have firsthand experience navigating first-generation and underrepresented student challenges.</li>
+    <li><span style="color:rgb(6, 102, 57); font-weight:bold;">Academic support</span>: offers academic support through tutoring services and study strategy guidance and course planning.</li>
+  </ul>
+</div>
 
         <!-- schedule
 
@@ -78,19 +138,28 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <h2>Ready, Set, Succeed</h2>
 
-        <img alt="ReadySetCollege" src="img/Event Image 1.png" style="width:300px; height:auto;">
-        <h3>Student Success Starts Here</h3>
-        <p>ReadySetCollege helps students log in easily and quickly find the support they need for their college journey</p>
+
+      <div class="event-container">
+  <div class="event-box">
+    <img alt="ReadySetCollege" src="img/Event Image 1.png" style="width:300px; height:auto;">
+    <h3>Student Success Starts Here</h3>
+    <p>ReadySetCollege helps students log in easily and quickly find the support they need for their college journey</p>
+  </div>
             
-        <img alt="Image description" src="img/Event 2 image Small.png"/>
-        <h3>Navigate Your College Journey</h3>
-        <p>Students can search for mentorship, schloarship, and academic suppiort through the ReadySetCollege platform-all in one easy to use interface.</p>
+   <div class="event-box">
+    <img alt="Image description" src="img/Event 2 image Small.png" style="width:300px; height:auto;">
+    <h3>Navigate Your College Journey</h3>
+    <p>Students can search for mentorship, scholarship, and academic support through the ReadySetCollege platform—all in one easy-to-use interface.</p>
+  </div>
 
-        <img alt="Image description" src="img/Event 3 image Small.png" style="width:300px; height:auto;">
-        <h3>Turn Plans into Action</h3>
-        <p>The College Plan lays out clear, actionable steps such as finding mentors and securing scholarships to help students move confidently toward their academic goals.</p>
+<div class="event-box">
+    <img alt="Image description" src="img/Event 3 image Small.png" style="width:100px; height:500;">
+    <h3>Turn Plans into Action</h3>
+    <p>The College Plan lays out clear, actionable steps such as finding mentors and securing scholarships to help students move confidently toward their academic goals.</p>
+  </div>
+</div>
+
 
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
@@ -105,15 +174,27 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <h2>Links</h2>
+        <h2>Resources</h2>
 
         <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
-        <a class="block" href="https://www.codepath.org">
-            <article>
-                <h3>Link title</h3>
-                <p>Link description</p>
-            </article>
-        </a>
+   <footer id="college-footer">
+  <h2>College Prep Resources</h2>
+
+  <a class="footer-link" href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener">
+    <article>
+      <h3>FAFSA Application</h3>
+      <p>Apply for federal student aid and access financial support for college.</p>
+    </article>
+  </a>
+
+  <a class="footer-link" href="https://www.collegeboard.org/" target="_blank" rel="noopener">
+    <article>
+      <h3>College Board</h3>
+      <p>Explore SAT, AP, and BigFuture tools to plan your college journey.</p>
+    </article>
+  </a>
+  </footer>
+
             
         <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
         <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
