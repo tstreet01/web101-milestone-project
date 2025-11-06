@@ -31,7 +31,7 @@
         <title>ReadySetCollege</title>
         <style>
            body {
-         background-color: #051634;
+         background-color: #bec485;
       color: #FFD700; /* gold text */
       font-family: "Lucida Handwriting", cursive;
       margin: 40px;
@@ -49,6 +49,10 @@
 Purpose:
 - Navigation bar that allows users to jump to different sections of the webpage
 - Also holds buttons for user settings (dark mode, reduce motion)
+<nav>
+
+  
+</nav>
 
 When To Modify:
 - [ ] Project 4 (REQUIRED FEATURE)
@@ -56,6 +60,11 @@ When To Modify:
 - [ ] Project 8 (STRETCH FEATURE) 
 - [ ] Any time between / after
 -->
+<nav>
+ 
+  <button id="theme-button">🌙 Toggle Dark Mode</button>
+</nav>
+
 <div class="navbar">
   <ul>
     <li><a href="#about">About</a></li>
@@ -64,29 +73,32 @@ When To Modify:
     <li><a href="#mentors">Mentorship</a></li>
   </ul>
 </div>
+<div class="event-container">
+  <section class="event-box" id="about">
+    <h2>About the Event</h2>
+    <p>Promote educational equity by giving students (especially first-gen, low-income, or underrepresented groups) the tools they need to succeed.</p>
+  </section>
 
-<section id="about">
-  <h2>About the Event</h2>
-  <p>Promote educational equity by giving students (especially first-gen, low-income, or underrepresented groups) the tools they need to succeed.</p>
-</section>
+  <section class="event-box" id="schedule">
+    <h2>Ready, Set, Succeed</h2>
+    <p>Explore workshops, panels, and networking opportunities designed to empower your academic journey.</p>
+  </section>
 
-<section id="schedule">
-  <h2>Ready, Set, Succeed</h2>
-  <p>Explore workshops, panels, and networking opportunities designed to empower your academic journey.</p>
-</section>
+  <section class="event-box" id="resources">
+    <h2>Student Resources</h2>
+    <p>Access curated guides, campus links, and support tools tailored for first-gen and underrepresented students.</p>
+  </section>
 
-<section id="resources">
-  <h2>Student Resources</h2>
-  <p>Access curated guides, campus links, and support tools tailored for first-gen and underrepresented students.</p>
-</section>
+  <section class="event-box" id="mentors">
+    <h2>Mentorship</h2>
+    <div>
+      <button>Become a Mentor</button>
+      <button>Find a Mentor</button>
+    </div>
+  </section>
+</div>
 
-<section id="mentors">
-  <h2>Mentorship</h2>
-  <div>
-    <button>Become a Mentor</button>
-    <button>Find a Mentor</button>
-  </div>
-</section>
+</div>
 
 
         <!-- headings
@@ -162,6 +174,61 @@ When To Modify:
 
 
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
+         <!-- rsvp
+          
+
+<div class="event-box" id="rsvp">
+    <h2>RSVP</h2>
+    <p id="rsvp-count">⭐ 4 people have RSVP'd to this event!</p>
+
+    !-- RSVP Container -->
+ <!-- RSVP Section -->
+<!-- RSVP Section -->
+<!-- RSVP Section -->
+<!-- Main RSVP Box -->
+<!-- Main RSVP Box -->
+<!-- RSVP Section -->
+<!-- RSVP Section -->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section: Event Summary -->
+    <div class="left">
+      <h1>🎓 Get Ready for Our College & Career Prep Mixer!</h1>
+      <p>
+        Meet recruiters, student leaders, and mentors who can help you plan your next steps.<br>
+        RSVP today to gain insights, build connections, and prepare for your future success!
+      </p>
+
+      <!-- RSVP Form -->
+      <form id="rsvp-form">
+        <input type="text" id="name" placeholder="Full Name" />
+        <input type="text" id="location" placeholder="Location (e.g., Texas)" />
+        <input type="email" id="email" placeholder="Email Address" />
+        <button type="submit" id="rsvp-button">RSVP</button>
+      </form>
+    </div>
+
+    <!-- Right Section: Participants -->
+    <div class="right" id="participants">
+      <div class="participant">🎟️ Amaya from Georgia has RSVP'd.</div>
+      <div class="participant">🎟️ Raven from California has RSVP'd.</div>
+      <div class="participant">🎟️ Temiloluwa from Montana has RSVP'd.</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
 
         <!-- links
@@ -197,7 +264,10 @@ When To Modify:
 
             
         <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
-        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+<body>
+  <!-- your html code above this -->
 
-    </body>
+  <script src="index.js"></script>
+</body>
+
 </html>

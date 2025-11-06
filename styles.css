@@ -25,26 +25,32 @@ html {
 
 body {
     /* Add a background color or image */
-    background-color: var(--bg-color); /* see bottom of file for color variables */
+    background-color: var(--bg-color); 
 
-    /* Customize the default size, color, and font for text*/
+    
     font-size: 16px;
     color: var(--text-color);
-    font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
-
-    /* Put space around the edges of the webpage */
+    font-family: Tahoma, sans-serif; 
+ 
     margin: 50px;
 
     .event-container {
   display: flex;
-  flex-direction: row;         /* lays out boxes side by side */
-  justify-content: center;     /* centers the row horizontally */
-  align-items: flex-start;     /* aligns boxes to the top */
-  gap: 20px;                   /* spacing between boxes */
-     flex-wrap: wrap;  /* allows wrapping on smaller screens */
+  flex-direction: row;         
+  justify-content: center;     
+  align-items: flex-start;     
+  gap: 20px;                  
+     flex-wrap: wrap;  
   margin-top: 30px;
 }
 } 
+/* --- Website Border --- */
+body {
+  border: 10px solid #4f1209;  /* gold border around the whole site */
+  margin: 0;                  /* remove outside space */
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*** Text ***
 
@@ -87,28 +93,28 @@ a:link, a:link * {
 }
 
 a:visited, a:visited * {
-  color: maroon;
+  color: rgb(233, 222, 14);
 }
 
 a:hover, a:hover * {
-  color: darkgreen;
+  color: rgb(47, 171, 47);
   text-decoration: underline;
 }
 
 a:active, a:active * {
   color: white;
-  background-color: maroon;
+  background-color: rgb(12, 5, 48);
 }
     
 
 button {
     /* Example Style, replace with your own! */
-    background-color: #008000;    /* button color */
-    color: white;               /* text color */
-    border: none;               /* hides the default border */
-    padding: 5px 12px;          /* space between button's text and edge */
-    border-radius: 5px;         /* curved edges instead of square */
-    cursor: pointer;            /* makes the cursor change when over button */
+    background-color: #008000;    
+    color: white;              
+    border: none;               
+    padding: 5px 12px;         
+    border-radius: 5px;         
+    cursor: pointer;            
 }
 
 button:hover {
@@ -189,13 +195,13 @@ button:hover {
 ***/
 
 .navbar {
-  background-color: rgb(5, 22, 52); /* navy blue */
+  background-color: rgb(111, 109, 81); /* navy blue */
   padding: 10px 20px;
 }
 
 .navbar ul {
   display: flex;
-  justify-content: space-around; /* evenly spaced */
+  justify-content: space-around; 
   align-items: center;
   list-style-type: none;
   margin: 0;
@@ -203,14 +209,14 @@ button:hover {
 }
 
 .navbar li {
-  background-color: #FFD700; /* gold box */
+  background-color: #FFD700; 
   padding: 10px 15px;
   border-radius: 8px;
   margin: 0 5px;
 }
 
 .navbar a {
-  color: rgb(5, 22, 52); /* navy text inside gold box */
+  color: rgb(5, 22, 52); 
   text-decoration: none;
   font-family: "Lucida Handwriting", cursive;
   font-weight: bold;
@@ -221,68 +227,106 @@ button:hover {
 }
 
 
-..navbar ul {
-  list-style-type: none;     /* removes bullet points */
-  overflow: hidden;          /* hides anything that spills out */
-  position: fixed;           /* sticks to top of page */
-  top: 0;
-  left: 0;
-  width: 100%;               /* full width across screen */
-  margin-bottom: 20px;
-  background-color: navy;    /* background color */
-  padding: 10px;
+./* Reset margins and padding */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.navbar ul li {
-  float: left;               /* puts items side by side */
-  margin: 0 10px;
+/* Navbar styling */
+.navbar {
+  background-color: #fdd804;   /* dark background */
+  overflow: hidden;         /* ensures no content spills out */
+  width: 100%;              /* full width bar */
 }
 
-.navbar ul li a {
-  display: block;            /* makes the whole area clickable */
-  text-decoration: none;     /* removes underline */
-  color: rgb(15, 12, 113);               /* gold text */
-  text-align: center;
-  padding: 10px 15px;
-  font-family: "Lucida Handwriting", cursive;
-  font-weight: bold;
-}
-
-.navbar ul li a:hover {
-  background-color: darkgreen; /* hover effect */
-  color: white;
-}
-
-section {
-  max-width: 600px; /* reduced from 800px */
-  margin: 30px auto; /* tighter spacing between sections */
-  padding: 15px; /* reduced padding inside boxes */
-  background-color: #05431c;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-  font-family: "Segoe UI", sans-serif;
-}
-
-section h2 {
-  font-size: 1.6em; /* slightly smaller heading */
-  color: #031b2d;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #711b0e;
-  padding-bottom: 4px;
-}
-
-section p {
-  font-size: 0.95em; /* slightly smaller paragraph text */
-  line-height: 1.5;
-  color: #0a0433;
-  margin-bottom: 15px;
-}
-
-#mentors {
+/* Navbar list setup */
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; /* reduced spacing between buttons */
+  justify-content: center;
+}
+
+/* Each list item */
+.navbar li {
+  display: inline;
+}
+
+/* Navbar links */
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  background-color: #043c04;
+}
+
+/* --- Continue with the rest of your CSS below --- */
+
+
+/* General section styling */
+/* Horizontal layout container */
+/* Container for all event boxes */
+.event-container {
+  display: flex;
+  flex-direction: row;          /* horizontal layout */
+  justify-content: center;      /* center the row */
+  align-items: stretch;         /* align all boxes evenly */
+  flex-wrap: nowrap;            /* keep all boxes in one row */
+  gap: 25px;                    /* space between boxes */
+  overflow-x: auto;             /* horizontal scroll if needed */
+  padding: 30px;
+  scroll-snap-type: x mandatory; /* smooth scroll snapping */
+}
+
+/* Event box style */
+.event-box {
+  flex: 0 0 300px;              /* fixed width */
+  background-color: #114c21 ; 
+  color: #FFD700;               /* gold text */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift effect */
+.event-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+/* Event box headings */
+.event-box h2 {
+  border-bottom: 2px solid #FFD700;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #FFD700;
+}
+
+/* Event box paragraphs */
+.event-box p {
+  font-size: 0.95em;
+  color: #e1c10b;
+}
+
+/* Mentor button styling */
+#mentors div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-top: 15px;
 }
 
@@ -290,7 +334,7 @@ section p {
   background-color: #022a08;
   color: #FFD700;
   border: none;
-  padding: 10px 20px; /* smaller button size */
+  padding: 10px 20px;
   border-radius: 6px;
   font-size: 0.95em;
   cursor: pointer;
@@ -299,6 +343,10 @@ section p {
 
 #mentors button:hover {
   background-color: #0B3D91;
+  color: white;
+}
+
+
 }
 
 /*** About Section ***
@@ -338,9 +386,93 @@ section p {
 
 
 /*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
-/*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
+
+/*** RSVP Section ***
+  
+  Purpose:
+  - Add style rules for your website's RSVP form
+
+  When To Modify:
+  - [ ] Project 6 (REQUIRED FEATURE)
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+/* Event Box Styling */
+/*** RSVP Section ***/
+#/* RSVP Input Styling */
+/* Main RSVP Box */
+/* Main RSVP Box */
+/* Main RSVP Box */
+/* Main RSVP Box */
+/* Container to hold RSVP and form side by side */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #144f30;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: rgb(10, 79, 13);
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 50px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  width: 45%;
+}
+
+.right {
+  width: 45%;
+}
+
+h1 {
+  color: #f7eb0c;
+}
+
+#rsvp-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#rsvp-form input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#rsvp-button {
+  background-color: #531e11;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#rsvp-button:hover {
+  background-color: #0056b3;
+}
+
+/* Error Style */
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background-color: #ffe6e6;
+}
+
+
 
 /*** Custom Colors (OPTIONAL) ***
   
@@ -354,29 +486,40 @@ section p {
 ***/
 
 :root {
-    /* Light Mode */
-    --bg-color: #c6b54f;
-    --text-color: #231942;
+    //* Light mode (default) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-    /* Dark Mode */
-    --bg-color-dark-mode: #87CEEB;
-    --text-color-dark-mode: #fff;
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
 
-    /* Accent Colors */
-    --accent-color-light: #133d26;
-    --accent-color-medium: #b4221b;
-    --accent-color-dark: #134a22;
-    --accent-color-darkest: #231942;
-    --accent-color-green: #28eb76;
+/* Optional: style the button */
+#theme-button {
+  background-color: #0c3205;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  margin: 10px;
+}
 
-    /* Error Colors */
-    --error-color: #f8bbd0;
-    --error-color-border: #dd1f2e;
+#theme-button:hover {
+  background-color: #005fa3;
+}
+
 }
 #college-footer {
-  background-color: #05314f;
+  background-color: #0d3408;
   color: #FFD700;
-  padding: 25px 15px; /* reduced from 40px 20px */
+  padding: 25px 15px; 
   text-align: center;
   font-family: "Lucida Handwriting", cursive;
 }
@@ -390,7 +533,7 @@ a.footer-link {
   display: flex;
   text-decoration: none;
   color: #FFD700;
-  background-color: #022a08;
+  background-color: #13401a;
   margin: 10px auto; 
   padding: 15px;
   border-radius: 8px; 
@@ -399,7 +542,7 @@ a.footer-link {
 }
 
 a.footer-link:hover {
-  background-color: #0B3D91;
+  background-color: #121f34;
 }
 
 a.footer-link h3 {
