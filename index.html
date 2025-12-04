@@ -4,11 +4,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<div class="header">
+<div class="header revealable">
   <div id="header-left">
-    <img id="header-img" src="img/purpose image.png" alt="ReadySetCollege Logo" style="width: 250px;px; max-width:100%;">
+    <img id="header-img" src="img/purpose image.png" alt="Logo">
   </div>
-
   <div id="header-right">
     <h1>ReadySetCollege</h1>
     <h2>Your Future Starts Here</h2>
@@ -18,6 +17,7 @@
     </div>
   </div>
 </div>
+
 <!-- 
   - Title used here shows up in the browser tab
   - Link to the favicon (small image that appears in the browser tab)
@@ -60,44 +60,40 @@ When To Modify:
 - [ ] Project 8 (STRETCH FEATURE) 
 - [ ] Any time between / after
 -->
-<nav>
- 
-  <button id="theme-button">🌙 Toggle Dark Mode</button>
-</nav>
+<nav class="navbar revealable">
+  <div class="navbar-buttons">
+    <button id="reduce-motion-btn">Reduce Motion On</button>
+    <button id="theme-button">🌙 Toggle Dark Mode</button>
+  </div>
 
-<div class="navbar">
-  <ul>
+  <ul class="navbar-links">
     <li><a href="#about">About</a></li>
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#mentors">Mentorship</a></li>
   </ul>
-</div>
+</nav>
+
 <div class="event-container">
-  <section class="event-box" id="about">
-    <h2>About the Event</h2>
-    <p>Promote educational equity by giving students (especially first-gen, low-income, or underrepresented groups) the tools they need to succeed.</p>
-  </section>
+  <section class="event-box revealable" id="schedule">
+  <h2>Ready, Set, Succeed</h2>
+  <p>Explore workshops, panels, and networking opportunities designed to empower your academic journey.</p>
+</section>
 
-  <section class="event-box" id="schedule">
-    <h2>Ready, Set, Succeed</h2>
-    <p>Explore workshops, panels, and networking opportunities designed to empower your academic journey.</p>
-  </section>
+<section class="event-box revealable" id="resources">
+  <h2>Student Resources</h2>
+  <p>Access curated guides, campus links, and support tools tailored for first-gen and underrepresented students.</p>
+</section>
 
-  <section class="event-box" id="resources">
-    <h2>Student Resources</h2>
-    <p>Access curated guides, campus links, and support tools tailored for first-gen and underrepresented students.</p>
-  </section>
+<section class="event-box revealable" id="mentors">
+  <h2>Mentorship</h2>
+  <div><!-- your content here --></div>
 
-  <section class="event-box" id="mentors">
-    <h2>Mentorship</h2>
-    <div>
-      <button>Become a Mentor</button>
-      <button>Find a Mentor</button>
+  <!-- Add the buttons here -->
+  <button id="become-mentor-btn">Become a Mentor</button>
+  <button id="find-mentor-btn">Find a Mentor</button>
+</section>
     </div>
-  </section>
-</div>
-
 </div>
 
 
@@ -153,19 +149,19 @@ When To Modify:
 
 
       <div class="event-container">
-  <div class="event-box">
+  <div class="event-box revealable">
     <img alt="ReadySetCollege" src="img/Event Image 1.png" style="width:300px; height:auto;">
     <h3>Student Success Starts Here</h3>
     <p>ReadySetCollege helps students log in easily and quickly find the support they need for their college journey</p>
   </div>
             
-   <div class="event-box">
+  <div class="event-box revealable">
     <img alt="Image description" src="img/Event 2 image Small.png" style="width:300px; height:auto;">
     <h3>Navigate Your College Journey</h3>
     <p>Students can search for mentorship, scholarship, and academic support through the ReadySetCollege platform—all in one easy-to-use interface.</p>
   </div>
 
-<div class="event-box">
+  <div class="event-box revealable">
     <img alt="Image description" src="img/Event 3 image Small.png" style="width:100px; height:500;">
     <h3>Turn Plans into Action</h3>
     <p>The College Plan lays out clear, actionable steps such as finding mentors and securing scholarships to help students move confidently toward their academic goals.</p>
@@ -173,9 +169,13 @@ When To Modify:
 </div>
 
 
+
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
          <!-- rsvp
           
+<!-- Your main content here -
+
+<script src="script.js"></script>
 
 <div class="event-box" id="rsvp">
     <h2>RSVP</h2>
@@ -189,48 +189,47 @@ When To Modify:
 <!-- Main RSVP Box -->
 <!-- RSVP Section -->
 <!-- RSVP Section -->
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSVP Form</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <!-- Left Section: Event Summary -->
-    <div class="left">
-      <h1>🎓 Get Ready for Our College & Career Prep Mixer!</h1>
-      <p>
-        Meet recruiters, student leaders, and mentors who can help you plan your next steps.<br>
-        RSVP today to gain insights, build connections, and prepare for your future success!
-      </p>
+<div class="container revealable">
+  <!-- Left Section: Event Summary -->
+  <div class="left">
+    <h1>🎓 Get Ready for Our College & Career Prep Mixer!</h1>
+    <p>
+      Meet recruiters, student leaders, and mentors who can help you plan your next steps.<br>
+      RSVP today to gain insights, build connections, and prepare for your future success!
+    </p>
 
-      <!-- RSVP Form -->
-      <form id="rsvp-form">
-        <input type="text" id="name" placeholder="Full Name" />
-        <input type="text" id="location" placeholder="Location (e.g., Texas)" />
-        <input type="email" id="email" placeholder="Email Address" />
-        <button type="submit" id="rsvp-button">RSVP</button>
-      </form>
-    </div>
-
-    <!-- Right Section: Participants -->
-    <div class="right" id="participants">
-      <div class="participant">🎟️ Amaya from Georgia has RSVP'd.</div>
-      <div class="participant">🎟️ Raven from California has RSVP'd.</div>
-      <div class="participant">🎟️ Temiloluwa from Montana has RSVP'd.</div>
-    </div>
+    <!-- RSVP Form -->
+    <form id="rsvp-form">
+      <input type="text" id="name" placeholder="Full Name" />
+      <input type="text" id="location" placeholder="Location (e.g., Texas)" />
+      <input type="email" id="email" placeholder="Email Address" />
+      <button type="submit" id="rsvp-button">RSVP</button>
+    </form>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Right Section: Participants -->
+  <div class="right" id="participants">
+    <div class="participant">🎟️ Amaya from Georgia has RSVP'd.</div>
+    <div class="participant">🎟️ Raven from California has RSVP'd.</div>
+    <div class="participant">🎟️ Temiloluwa from Montana has RSVP'd.</div>
+  </div>
+</div>
+
 
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+<!-- Modal -->
+<div id="success-modal" class="modal">
+    <div class="modal-container">
+        <div class="modal-item">
+            <img id="modal-image" src="img/modal image.png" alt="Success Image">
+        </div>
+        <p id="modal-text"></p>
+        <button id="modal-close-btn">Close</button>
+    </div>
+</div>
 
+
+<script src="script.js"></script>
         <!-- links
 
         Purpose:

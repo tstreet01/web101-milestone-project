@@ -50,74 +50,148 @@ Purpose:
   - [ ] Project 9 (REQUIRED FEATURE)
   - [ ] Any time between / after
 ***/
+/*** Scroll Animations ***
+  /*** Scroll Reveal ***/
 
-// Step 1: Query for the submit RSVP button
-// Select the RSVP button
-// Make sure DOM is loaded first
-/*** Form Validation ***
-  
-  Purpose:
-  - Prevents invalid form submissions from being added to the list of participants.
+// Select all revealable elements
+/*** Reduce Motion Button ***/
+/*** Reduce Motion Button (with delayed header reveal) ***/
+const reduceBtn = document.getElementById('reduce-motion-btn');
 
-  When To Modify:
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 7 (STRETCH FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Any time between / after
-***/
+reduceBtn.addEventListener('click', () => {
+    document.body.classList.toggle('reduce-motion');
 
-// Step 1: We actually don't need to select the form button again -- we already did it in the RSVP code above.
+    if (document.body.classList.contains('reduce-motion')) {
+        // Reduce Motion is ACTIVE
+        reduceBtn.textContent = 'Reduce Motion OFF'; 
+        // turn off extra motion, so no revealOther
+        setTimeout(() => {
+            document.body.classList.add('reveal-other');
+        }, 1000);
+    } else {
+        // Reduce Motion is DISABLED
+        reduceBtn.textContent = 'Reduce Motion ON';
+        document.body.classList.remove('reveal-other');
+    }
+});
 
-// Add Participant Function (Keep This!)
-function addParticipant(name, location) {
-  const participantsDiv = document.getElementById("participants");
-  const newParticipant = document.createElement("div");
-  newParticipant.classList.add("participant");
-  newParticipant.textContent = `🎟️ ${name} from ${location} has RSVP'd.`;
-  participantsDiv.appendChild(newParticipant);
-}
 
-// Validate form inputs
-const validateForm = (event) => {
-  event.preventDefault();
 
-  let containsErrors = false;
-  const form = document.getElementById("rsvp-form");
-  const inputs = form.elements;
+/*** Scroll Reveal Animations ***/
+const revealableContainers = document.querySelectorAll('.revealable');
 
-  // Remove previous errors
-  for (let input of inputs) {
-    input.classList.remove("error");
-  }
+const reveal = () => {
+    const windowHeight = window.innerHeight;
+    revealableContainers.forEach(container => {
+        const top = container.getBoundingClientRect().top;
+        const revealDistance = parseInt(getComputedStyle(container).getPropertyValue('--reveal-distance'), 10) || 150;
 
-  // Get field values
-  const name = document.getElementById("name").value.trim();
-  const location = document.getElementById("location").value.trim();
-  const email = document.getElementById("email").value.trim();
+        // For Reduce Motion, only reveal navbar when scrolled into view
+        if (document.body.classList.contains('reduce-motion') && container.classList.contains('navbar')) {
+            if (top > windowHeight - revealDistance) return; // skip until in view
+        }
 
-  // Validate each field
-  if (name === "") {
-    document.getElementById("name").classList.add("error");
-    containsErrors = true;
-  }
-  if (location === "") {
-    document.getElementById("location").classList.add("error");
-    containsErrors = true;
-  }
-  if (!email.includes("@") || email === "") {
-    document.getElementById("email").classList.add("error");
-    containsErrors = true;
-  }
-
-  // If no errors, add participant and clear form
-  if (!containsErrors) {
-    addParticipant(name, location);
-    form.reset();
-  }
+        if (top < windowHeight - revealDistance) {
+            container.classList.add('active');
+        } else {
+            container.classList.remove('active');
+        }
+    });
 };
 
-// Replace default listener with validation
-document
-  .getElementById("rsvp-form")
-  .addEventListener("submit", validateForm);
+window.addEventListener('scroll', reveal);
+reveal(); // initial check
 
+/*** Add Participant Function ***/
+function addParticipant(name, location) {
+    const participantsDiv = document.getElementById("participants");
+    const newParticipant = document.createElement("div");
+    newParticipant.classList.add("participant");
+    newParticipant.textContent = `🎟️ ${name} from ${location} has RSVP'd.`;
+    participantsDiv.appendChild(newParticipant);
+}
+
+
+/*** Form Validation & Modal ***/
+document.addEventListener('DOMContentLoaded', () => {
+    // Modal Elements
+    const modal = document.getElementById('success-modal');
+    const modalText = document.getElementById('modal-text');
+    const modalImage = document.getElementById('modal-image');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    let rotateFactor = 0;
+
+    function animateImage() {
+        if (document.body.classList.contains('reduce-motion')) return;
+        rotateFactor = rotateFactor === 0 ? -10 : 0;
+        modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+    }
+
+   
+    // Function to show modal
+    // Function to show modal (auto close + auto delete image)
+// Function to show modal (auto close + manual close)
+function toggleModal(person) {
+    modalText.textContent = `Thanks for RSVPing, ${person.name}! See you at the event!`;
+
+    // Show modal + reset image
+    modal.style.display = 'flex';
+    modalImage.style.display = "block";
+    modalImage.style.transform = "none";
+
+    let rotateFactor = 0;
+
+    // Animate image unless reduce motion is ON
+    const intervalId = setInterval(() => {
+        if (!document.body.classList.contains('reduce-motion')) {
+            rotateFactor = rotateFactor === 0 ? -10 : 0;
+            modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+        }
+    }, 500);
+
+    // AUTO CLOSE after 5 seconds
+    const autoClose = setTimeout(() => {
+        closeModal();
+    }, 5000);
+
+    // Manual close button
+    modalCloseBtn.onclick = () => {
+        closeModal();
+        clearTimeout(autoClose);
+    };
+
+    // The close function
+    function closeModal() {
+        modalImage.style.display = "none";  
+        modalImage.style.transform = "none";
+        modal.style.display = "none";
+        clearInterval(intervalId);
+    }
+}
+
+
+
+
+    // RSVP Form Handling
+    const form = document.getElementById('rsvp-form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const location = document.getElementById('location').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        let hasError = false;
+
+        if (!name) { hasError = true; document.getElementById('name').classList.add('error'); }
+        if (!location) { hasError = true; document.getElementById('location').classList.add('error'); }
+        if (!email.includes('@')) { hasError = true; document.getElementById('email').classList.add('error'); }
+
+        if (!hasError) {
+            addParticipant(name, location);
+            form.reset();
+            toggleModal({ name });
+        }
+    });
+});
