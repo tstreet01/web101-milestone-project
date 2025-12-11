@@ -1,4 +1,4 @@
-/*** Dark Mode ***
+*** Dark Mode ***
   
   Purpose:
   - Use this starter code to add a dark mode feature to your website.
@@ -195,3 +195,4 @@ function toggleModal(person) {
         }
     });
 });
+
